@@ -1,6 +1,6 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import Posts from './components/Posts.vue'
+// import Posts from './components/Posts.vue'
 </script>
 
 <template>
@@ -8,10 +8,10 @@ import Posts from './components/Posts.vue'
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <Posts />
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/posts">Posts</RouterLink>
       </nav>
     </div>
   </header>
