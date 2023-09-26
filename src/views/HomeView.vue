@@ -4,6 +4,6 @@
 
 <template>
   <main>
-    <div><h1>Home View</h1></div>
+    <div><h1>Projects</h1></div>
   </main>
 </template>
