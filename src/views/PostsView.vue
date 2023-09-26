@@ -4,9 +4,10 @@
             <ul>
                 <li v-for="post in posts" :key="post.id">
                     <h2>{{ post.title }}</h2>
-                    <p>{{ post.content }}</p>
+                    <p>by {{ post.owner }}</p>
+                    <p>{{ post.body }}</p>
                     
-                    <button @click="deletePost(deletePost)">Delete</button>
+                    <!-- <button @click="deletePost(deletePost)">Delete</button> -->
                 </li>
             </ul>
         </div>
@@ -18,7 +19,7 @@ import { ref, onMounted } from 'vue';
 import axios from 'axios'
 let posts = ref()
 onMounted(async() => {
-    const res = await axios.get(`http://localhost:8000/api/posts/`);
+    const res = await axios.get(`http://localhost:8000/api/v1/posts/`);
     posts.value = res.data
 });
 </script>

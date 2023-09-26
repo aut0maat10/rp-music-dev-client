@@ -5,7 +5,14 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+    <div class="outer">
+    <div class="container">
+      <h1>Hi, my name is Robin.</h1>
+      <h3>I'm a freelance web developer.</h3>
+      <p>I have agency experience building landing pages and solutions for various clients. At the moment I'm looking for work as a cloud developer.</p>
+    </div>
+    
+    <!-- <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" /> -->
 
     <div class="wrapper">
       <nav>
@@ -14,6 +21,7 @@ import { RouterLink, RouterView } from 'vue-router'
         <RouterLink to="/posts">Posts</RouterLink>
       </nav>
     </div>
+  </div>
   </header>
 
   <RouterView />
