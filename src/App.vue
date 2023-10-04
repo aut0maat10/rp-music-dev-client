@@ -4,18 +4,18 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <header>
+  <header class="max-h-screen lg:flex lg:place-items-center">
     <div class="outer">
     <div class="container">
-      <h1>Hi, my name is Robin.</h1>
+      <h1 class="text-5xl text-magenta">Hi, my name is Robin.</h1>
       <h3>I'm a freelance web developer.</h3>
       <p>I have agency experience building landing pages and solutions for various clients. At the moment I'm looking for work as a cloud developer.</p>
     </div>
     
     <!-- <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" /> -->
 
-    <div class="wrapper">
-      <nav>
+    <div class="wrapper lg:flex lg:flex-wrap lg:place-items-start ">
+      <nav class="w-100 mt-8 bg-magenta">
         <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/">Projects</RouterLink>
         <RouterLink to="/posts">Blog</RouterLink>
@@ -28,12 +28,12 @@ import { RouterLink, RouterView } from 'vue-router'
 </template>
 
 <style scoped>
-header {
+/* header {
   line-height: 1.5;
   max-height: 100vh;
-}
+} */
 
-.logo {
+/* .logo {
   display: block;
   margin: 0 auto 2rem;
 }
@@ -88,5 +88,5 @@ nav a:first-of-type {
     padding: 1rem 0;
     margin-top: 1rem;
   }
-}
+} */
 </style>
