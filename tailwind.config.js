@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 // const colors = import ('tailwindcss/colors')
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 export default {
   content: [
@@ -17,8 +18,7 @@ export default {
     },
     extend: {},
     fontFamily: {
-      sans: ['Graphik', 'sans-serif'],
-      serif: ['Merriweather', 'serif'],
+      outfit: ['"Outfit"', ...defaultTheme.fontFamily.sans]
     },
   },
   plugins: [],

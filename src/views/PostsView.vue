@@ -1,6 +1,7 @@
 <template>
-    <div class="posts-container">
+    <div class="posts-container w-100">
         <div class="post-wrapper">
+            <h1>Blog</h1>
             <ul>
                 <li v-for="post in posts" :key="post.id">
                     <h2>{{ post.title }}</h2>

@@ -4,21 +4,22 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <header class="max-h-screen lg:flex lg:place-items-center">
+  <header class="max-h-screen lg:flex lg:place-items-center lg:justify-center">
     <div class="outer">
     <div class="container">
-      <h1 class="text-5xl text-magenta">Hi, my name is Robin.</h1>
-      <h3>I'm a freelance web developer.</h3>
-      <p>I have agency experience building landing pages and solutions for various clients. At the moment I'm looking for work as a cloud developer.</p>
+      <h3 class="text-green text-xl">Hi, my name is</h3>
+      <h1 class="text-6xl text-magenta py-3 font-bold">Robin Pahlman.</h1>
+      <h3 class="text-4xl pb-3 font-normal text-white">I'm a freelance web developer.</h3>
+      <p class="">I build web solutions for clients big and small.</p>
     </div>
     
     <!-- <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" /> -->
 
     <div class="wrapper lg:flex lg:flex-wrap lg:place-items-start ">
-      <nav class="w-100 mt-8 bg-magenta">
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/">Projects</RouterLink>
-        <RouterLink to="/posts">Blog</RouterLink>
+      <nav class="w-100 mt-8 flex gap-4 text-xl">
+        <RouterLink to="/" class="hover:text-magenta" :class="{ 'text-white underline': $route.path === '/', 'text-green': $route.path != '/' }">About</RouterLink>
+        <RouterLink to="/projects" class="hover:text-magenta" :class="{ 'text-white underline': $route.path === '/projects', 'text-green': $route.path != '/projects' }">Projects</RouterLink>
+        <RouterLink to="/posts" class="hover:text-magenta" :class="{ 'text-white underline': $route.path === '/posts', 'text-green': $route.path != '/posts' }">Blog</RouterLink>
       </nav>
     </div>
   </div>

@@ -1,16 +1,9 @@
 <template>
-  <div class="about lg:min-h-screen lg:flex lg:items-center">
-    <p>I got into web development because I needed a website for a band. After learning how to manipulate Wordpress themes I wanted to learn more, and after online studies and a bootcamp course, I spent a few years building landing pages and various solutions for clients at a startup in New York City.
-    <br/><br/>More recently, while working on some music projects, I became interested in cloud computing. I received my AWS Developer Associate certification in 2023. At the moment, I'm looking for work that relates to the cloud.</p>
+  <div class="about lg:min-h-screen pt-7 lg:flex lg:items-center lg:pt-0">
+    <p>I got into web development out of curiosity, as I needed a website for a band. This sparked my interest in programming, and after self studies online and a bootcamp course, I landed my first full time developer job at a growth marketing agency in New York City.
+    <br/><br/>More recently, while working on some music projects, I became interested in cloud computing. I received my AWS Developer Associate certification in 2023, and currently, I'm looking for work related to the cloud.</p>
   </div>
 </template>
 
 <style>
-/* @media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-} */
 </style>
