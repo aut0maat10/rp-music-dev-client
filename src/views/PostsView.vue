@@ -1,10 +1,10 @@
 <template>
     <div class="posts-container w-100">
         <div class="post-wrapper">
-            <h1>Blog</h1>
+            <h1 class="text-2xl text-magenta pb-4">Blog Posts</h1>
             <ul>
                 <li v-for="post in posts" :key="post.id">
-                    <h2 class="text-2xl py-2" v-html="post.title"></h2>
+                    <h2 class="text-2xl py-1" v-html="post.title"></h2>
                     <p class="py-2" v-html="`by ${post.owner}`"></p>
                     <p class="py-2" v-html="post.blurb"></p>
                     
