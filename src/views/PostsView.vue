@@ -2,6 +2,7 @@
     <div class="posts-container w-100">
         <div class="post-wrapper">
             <h1 class="text-2xl text-magenta pb-4">Blog Posts</h1>
+            <!-- <div v-if="loading">Loading...</div> -->
             <ul>
                 <li v-for="post in posts" :key="post.id">
                     <h2 class="text-2xl py-1" v-html="post.title"></h2>
@@ -19,9 +20,11 @@
 import { ref, onMounted } from 'vue';
 import axios from 'axios'
 let posts = ref()
+//let loading = ref(true)
 onMounted(async() => {
     const res = await axios.get(`http://env-rp-music-dev.eba-sxduvmc3.us-east-1.elasticbeanstalk.com/api/v1/posts`);
-    posts.value = res.data
+    posts.value = res.data;
+    // loading.value = false;
 });
 </script>
 

@@ -35,19 +35,27 @@ import { RouterLink, RouterView, useRoute } from 'vue-router'
     </header>  
     <RouterView />
   </div>
-  <div v-if="route.meta.layout" class="blog-wrapper">
-    <nav class="w-100 mt-8 flex gap-4 text-xl">
-      <RouterLink to="/" class="hover:text-magenta" :class="{ 'text-white underline': $route.path === '/', 'text-green': $route.path != '/' }">About</RouterLink>
-      <RouterLink to="/projects" class="hover:text-magenta" :class="{ 'text-white underline': $route.path === '/projects', 'text-green': $route.path != '/projects' }">Projects</RouterLink>
-      <RouterLink to="/posts" class="hover:text-magenta" :class="{ 'text-white underline': $route.path === '/posts', 'text-green': $route.path != '/posts' }">Blog</RouterLink>
-    </nav>
-    <h1>Hi</h1>
-    <RouterView />
-  </div>
   
+    <div v-if="route.meta.layout" class="blog-wrapper">
+      <nav class="w-100 mt-8 flex gap-4 text-xl">
+        <RouterLink to="/" class="hover:text-magenta" :class="{ 'text-white underline': $route.path === '/', 'text-green': $route.path != '/' }">About</RouterLink>
+        <RouterLink to="/projects" class="hover:text-magenta" :class="{ 'text-white underline': $route.path === '/projects', 'text-green': $route.path != '/projects' }">Projects</RouterLink>
+        <RouterLink to="/posts" class="hover:text-magenta" :class="{ 'text-white underline': $route.path === '/posts', 'text-green': $route.path != '/posts' }">Blog</RouterLink>
+      </nav>
+      <RouterView />
+    </div>
 </template>
 
 <style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity .8s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
 /* header {
   line-height: 1.5;
   max-height: 100vh;
