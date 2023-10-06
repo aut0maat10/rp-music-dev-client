@@ -1,31 +1,50 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+// import { onBeforeMount } from 'vue';
+import { RouterLink, RouterView, useRoute } from 'vue-router'
 // import Posts from './components/Posts.vue'
+
+// let blogView;
+// onBeforeMount(() => {
+  const route = useRoute();
+//   console.log(route.name)
+//   blogView = false
+// })
 </script>
 
 <template>
-  <header class="max-h-screen lg:flex lg:place-items-center lg:justify-center">
+  <div v-if="!route.meta.layout" class="app-wrapper p-8 lg:grid lg:grid-cols-2 lg:gap-8 lg:py-0 lg:px-8">
+    <header class="max-h-screen lg:flex lg:place-items-center lg:justify-center">
     <div class="outer">
-    <div class="container">
-      <h3 class="text-green text-xl">Hi, my name is</h3>
-      <h1 class="text-6xl text-magenta py-3 font-bold">Robin Pahlman.</h1>
-      <h3 class="text-4xl pb-3 font-normal text-white">I'm a freelance web developer.</h3>
-      <p class="">I build web solutions for clients big and small.</p>
-    </div>
+      <div class="container">
+        <h3 class="text-green text-xl">Hi, my name is</h3>
+        <h1 class="text-6xl text-magenta py-3 font-bold">Robin Pahlman.</h1>
+        <h3 class="text-4xl pb-3 font-normal text-white">I'm a freelance web developer.</h3>
+        <p class="">I build web solutions for clients big and small.</p>
+      </div>
     
     <!-- <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" /> -->
 
-    <div class="wrapper lg:flex lg:flex-wrap lg:place-items-start ">
-      <nav class="w-100 mt-8 flex gap-4 text-xl">
-        <RouterLink to="/" class="hover:text-magenta" :class="{ 'text-white underline': $route.path === '/', 'text-green': $route.path != '/' }">About</RouterLink>
-        <RouterLink to="/projects" class="hover:text-magenta" :class="{ 'text-white underline': $route.path === '/projects', 'text-green': $route.path != '/projects' }">Projects</RouterLink>
-        <RouterLink to="/posts" class="hover:text-magenta" :class="{ 'text-white underline': $route.path === '/posts', 'text-green': $route.path != '/posts' }">Blog</RouterLink>
-      </nav>
+      <div class="wrapper lg:flex lg:flex-wrap lg:place-items-start ">
+        <nav class="w-100 mt-8 flex gap-4 text-xl">
+          <RouterLink to="/" class="hover:text-magenta" :class="{ 'text-white underline': $route.path === '/', 'text-green': $route.path != '/' }">About</RouterLink>
+          <RouterLink to="/projects" class="hover:text-magenta" :class="{ 'text-white underline': $route.path === '/projects', 'text-green': $route.path != '/projects' }">Projects</RouterLink>
+          <RouterLink to="/posts" class="hover:text-magenta" :class="{ 'text-white underline': $route.path === '/posts', 'text-green': $route.path != '/posts' }">Blog</RouterLink>
+        </nav>
+      </div>
     </div>
+    </header>  
+    <RouterView />
   </div>
-  </header>
-
-  <RouterView />
+  <div v-if="route.meta.layout" class="blog-wrapper">
+    <nav class="w-100 mt-8 flex gap-4 text-xl">
+      <RouterLink to="/" class="hover:text-magenta" :class="{ 'text-white underline': $route.path === '/', 'text-green': $route.path != '/' }">About</RouterLink>
+      <RouterLink to="/projects" class="hover:text-magenta" :class="{ 'text-white underline': $route.path === '/projects', 'text-green': $route.path != '/projects' }">Projects</RouterLink>
+      <RouterLink to="/posts" class="hover:text-magenta" :class="{ 'text-white underline': $route.path === '/posts', 'text-green': $route.path != '/posts' }">Blog</RouterLink>
+    </nav>
+    <h1>Hi</h1>
+    <RouterView />
+  </div>
+  
 </template>
 
 <style scoped>

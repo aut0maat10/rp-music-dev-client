@@ -25,6 +25,7 @@ const router = createRouter({
     {
       path: '/posts/:id',
       name: 'posts/:id',
+      meta: { layout: 'BlogLayout' },
       component: () => import ('../views/PostDetail.vue')
     }
       
