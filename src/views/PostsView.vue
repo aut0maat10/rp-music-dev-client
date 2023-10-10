@@ -20,7 +20,7 @@ import axios from 'axios'
 let posts = ref()
 //let loading = ref(true)
 onMounted(async() => {
-    const res = await axios.get(`http://env-rp-music-dev.eba-sxduvmc3.us-east-1.elasticbeanstalk.com/api/v1/posts`);
+    const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/v1/posts`);
     posts.value = res.data;
     // loading.value = false;
 });
