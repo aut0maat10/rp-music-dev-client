@@ -12,7 +12,8 @@ import { RouterLink, RouterView, useRoute } from 'vue-router'
 </script>
 
 <template>
-  <div v-if="!route.meta.layout" class="app-wrapper p-8 lg:grid lg:grid-cols-2 lg:gap-8 lg:py-0 lg:px-8">
+  <!-- <Transition name="fade" mode="out-in"> -->
+  <div v-if="route.meta.layout === 'AppLayout'" class="app-wrapper p-8 lg:grid lg:grid-cols-2 lg:gap-8 lg:py-0 lg:px-8">
     <header class="max-h-screen lg:flex lg:place-items-center lg:justify-center">
     <div class="outer">
       <div class="container">
@@ -36,20 +37,23 @@ import { RouterLink, RouterView, useRoute } from 'vue-router'
     <RouterView />
   </div>
   
-    <div v-if="route.meta.layout" class="blog-wrapper">
+    <div v-else-if="route.meta.layout === 'BlogLayout'" class="blog-wrapper">
       <nav class="w-100 mt-8 flex gap-4 text-xl">
         <RouterLink to="/" class="hover:text-magenta" :class="{ 'text-white underline': $route.path === '/', 'text-green': $route.path != '/' }">About</RouterLink>
         <RouterLink to="/projects" class="hover:text-magenta" :class="{ 'text-white underline': $route.path === '/projects', 'text-green': $route.path != '/projects' }">Projects</RouterLink>
         <RouterLink to="/posts" class="hover:text-magenta" :class="{ 'text-white underline': $route.path === '/posts', 'text-green': $route.path != '/posts' }">Blog</RouterLink>
       </nav>
-      <RouterView />
+      <Transition name="fade" mode="out-in">
+        <RouterView />
+      </Transition>
     </div>
+  <!-- </Transition> -->
 </template>
 
 <style scoped>
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity .8s ease;
+  transition: opacity .6s ease;
 }
 
 .fade-enter-from,

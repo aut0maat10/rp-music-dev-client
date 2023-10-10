@@ -5,11 +5,9 @@
             <!-- <div v-if="loading">Loading...</div> -->
             <ul>
                 <li v-for="post in posts" :key="post.id">
-                    <h2 class="text-2xl py-1" v-html="post.title"></h2>
+                    <h2 class="text-2xl py-1 text-green" v-html="post.title"></h2>
                     <p class="py-2" v-html="`by ${post.owner}`"></p>
                     <p class="py-2" v-html="post.blurb"></p>
-                    
-                    <!-- <button @click="deletePost(deletePost)">Delete</button> -->
                 </li>
             </ul>
         </div>

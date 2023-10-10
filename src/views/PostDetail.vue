@@ -1,13 +1,11 @@
 <template>
     <!-- <div v-if="loading"></div> -->
-    <Transition name="fade">
         <div>
             <p>this is the PostDetail component</p>
             <h2 v-html="post.title"></h2>
             <p v-html="post.owner"></p>
             <p v-html="post.body"></p>
-        </div>
-    </Transition>   
+        </div>  
 </template>
 
 <script setup>
@@ -26,13 +24,5 @@ onMounted(async() => {
 </script>
 
 <style scoped>
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity .8s ease;
-}
 
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
 </style>
