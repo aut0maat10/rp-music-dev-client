@@ -1,7 +1,8 @@
 <template>
-    <div class="posts-container w-100">
+    <div v-show="loading" class="w-full">Loading...</div>
+    <div v-show="!loading" class="posts-container w-100">
         <div class="post-wrapper">
-            <h1 class="text-2xl text-magenta pb-4">Blog Posts</h1>
+            <h2 class="text-2xl text-magenta pb-4">Blog Posts</h2>
             <!-- <div v-if="loading">Loading...</div> -->
             <ul>
                 <li v-for="post in posts" :key="post.id">
@@ -18,11 +19,11 @@
 import { ref, onMounted } from 'vue';
 import axios from 'axios'
 let posts = ref()
-//let loading = ref(true)
+let loading = ref(true)
 onMounted(async() => {
     const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/v1/posts`);
     posts.value = res.data;
-    // loading.value = false;
+    loading.value = false;
 });
 </script>
 

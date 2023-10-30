@@ -1,6 +1,6 @@
 <template>
     <!-- <div v-if="loading"></div> -->
-        <div>
+        <div class="w-100">
             <p>this is the PostDetail component</p>
             <h2 v-html="post.title"></h2>
             <p v-html="post.owner"></p>

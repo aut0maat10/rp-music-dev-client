@@ -29,6 +29,7 @@ import { RouterLink, RouterView, useRoute } from 'vue-router'
         <nav class="w-100 mt-8 flex gap-4 text-xl">
           <RouterLink to="/" class="hover:text-magenta" :class="{ 'text-white underline': $route.path === '/', 'text-green': $route.path != '/' }">About</RouterLink>
           <RouterLink to="/projects" class="hover:text-magenta" :class="{ 'text-white underline': $route.path === '/projects', 'text-green': $route.path != '/projects' }">Projects</RouterLink>
+          <RouterLink to="/contact" class="hover:text-magenta" :class="{ 'text-white underline': $route.path === '/contact', 'text-green': $route.path != '/contact' }">Contact</RouterLink>
           <RouterLink to="/posts" class="hover:text-magenta" :class="{ 'text-white underline': $route.path === '/posts', 'text-green': $route.path != '/posts' }">Blog</RouterLink>
         </nav>
       </div>
