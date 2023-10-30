@@ -29,5 +29,5 @@ coverage
 *.sln
 *.sw?
 
-/terraform/variables.ts
-/terraform/terraform.tfvars
+terraform/variables.ts
+terraform/terraform.tfvars
