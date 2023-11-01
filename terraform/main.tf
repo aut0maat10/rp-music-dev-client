@@ -41,7 +41,7 @@ resource "aws_cloudfront_distribution" "cdn_static_site" {
   origin {
     domain_name              = aws_s3_bucket.web_app.bucket_regional_domain_name
     origin_id                = "s3-origin"
-    origin_access_control_id = aws_cloudfront_origin_access_control.default.id
+    origin_access_control_id = aws_cloudfront_origin_access_control.rp-dev-default.id
   }
 
   default_cache_behavior {
@@ -79,9 +79,9 @@ resource "aws_cloudfront_distribution" "cdn_static_site" {
   }
 }
 
-resource "aws_cloudfront_origin_access_control" "default" {
-  name                              = "cloudfront OAC"
-  description                       = "description of OAC"
+resource "aws_cloudfront_origin_access_control" "rp-dev-default" {
+  name                              = "rp-dev cloudfront OAC"
+  description                       = "OAC for dev-rp dot com"
   origin_access_control_origin_type = "s3"
   signing_behavior                  = "always"
   signing_protocol                  = "sigv4"
