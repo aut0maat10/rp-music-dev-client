@@ -4,7 +4,7 @@
 
 <template>
   <main>
-    <div class="text-2xl text-magenta ml-3"><h1>Projects</h1></div>
+    <div class="text-2xl text-magenta mt-4 lg:ml-3"><h1>Projects</h1></div>
     <!-- CARD 1 -->
     <a href="https://d1tk1bfpsixa20.cloudfront.net/">
       <div
@@ -55,7 +55,7 @@
           This Website
         </h5>
         <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
-          dev.robinpahlman.com is built with VueJS and deployed to AWS S3 and Cloudfront with Terraform. A blog API will be added shortly.
+          <span class="text-magenta text-base">dev.robinpahlman.com</span> is built with VueJS and deployed to AWS S3 and Cloudfront with Terraform. A blog API will be added shortly.
         </p>
         <div class="flex mb-4">
           <button class="bg-green text-black text-xs mr-4 py-2 px-4 rounded-full">
