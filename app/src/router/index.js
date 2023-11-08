@@ -28,18 +28,19 @@ const router = createRouter({
       meta: { layout: 'AppLayout' },
       component: () => import('../views/ContactView.vue')
     },
-    {
-      path: '/posts',
-      name: 'posts',
-      meta: { layout: 'AppLayout' },
-      component: () => import ('../views/PostsView.vue')
-    },
-    {
-      path: '/posts/:id',
-      name: 'posts/:id',
-      meta: { layout: 'BlogLayout' },
-      component: () => import ('../views/PostDetail.vue')
-    }
+    // Commenting out blog routes for now until blog API in place
+    // {
+    //   path: '/posts',
+    //   name: 'posts',
+    //   meta: { layout: 'AppLayout' },
+    //   component: () => import ('../views/PostsView.vue')
+    // },
+    // {
+    //   path: '/posts/:id',
+    //   name: 'posts/:id',
+    //   meta: { layout: 'BlogLayout' },
+    //   component: () => import ('../views/PostDetail.vue')
+    // }
       
   ]
 })
