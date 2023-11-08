@@ -4,7 +4,7 @@
 
 <template>
   <main>
-    <div class="text-2xl text-magenta mt-4 lg:ml-3"><h1>Projects</h1></div>
+    <!-- <div class="text-2xl text-magenta mt-4 lg:ml-3"><h1>Projects</h1></div> -->
     <!-- CARD 1 -->
     <a href="https://d1tk1bfpsixa20.cloudfront.net/">
       <div
