@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import ProjectsView from '../views/ProjectsView.vue'
+import ProjectShow from '../views/ProjectShow.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -9,6 +10,12 @@ const router = createRouter({
       name: 'projects',
       meta: { layout: 'AppLayout' },
       component: ProjectsView
+    },
+    {
+      path: '/project/:slug',
+      name: 'project-show',
+      meta: { layout: 'AppLayout' },
+      component: ProjectShow
     },
     {
       path: '/',
@@ -27,7 +34,7 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       meta: { layout: 'AppLayout' },
       component: () => import('../views/ContactView.vue')
-    },
+    }
     // Commenting out blog routes for now until blog API in place
     // {
     //   path: '/posts',
@@ -41,7 +48,6 @@ const router = createRouter({
     //   meta: { layout: 'BlogLayout' },
     //   component: () => import ('../views/PostDetail.vue')
     // }
-      
   ]
 })
 
